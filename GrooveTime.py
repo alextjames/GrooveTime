@@ -13,7 +13,7 @@ def groove_form():
         action_queue.put(dict(request.query));
         return ""
         
-    return template('groove_results', songs='', ip=ip) 
+    return template('groove_results', songs='') 
 
 @post('/groove')
 def groove_post():
@@ -27,7 +27,7 @@ def groove_post():
 
     songs = json.load(f)
     
-    return template('groove_results', songs=songs, ip=ip) 
+    return template('groove_results', songs=songs) 
 
 @route('/groove_list.json')
 def groove_list():
@@ -41,10 +41,5 @@ def groove_list():
 
     return callback + '(' + json.dumps(action) + ')'
 
-if len(sys.argv) != 2:
-    print "Please specify the ip address as the first argument"
-    sys.exit()
-
-ip=sys.argv[1]
 action_queue = Queue.Queue()
 run(host='0.0.0.0', port=8080, server=PasteServer)

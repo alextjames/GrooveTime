@@ -10,14 +10,14 @@
 
 <h2>GrooveControl</h2>
 
-<input type="button" value="Play" onClick="jQuery.get('http://{{ip}}:8080/groove?action=play');" />
-<input type="button" value="Pause" onClick="jQuery.get('http://{{ip}}:8080/groove?action=pause');" />
-<input type="button" value="Next" onClick="jQuery.get('http://{{ip}}:8080/groove?action=next');" />
+<input type="button" value="Play" onClick="jQuery.get('/groove?action=play');" />
+<input type="button" value="Pause" onClick="jQuery.get('/groove?action=pause');" />
+<input type="button" value="Next" onClick="jQuery.get('/groove?action=next');" />
 <br>
 <h3>Volume</h3>
-<input type="button" value="Low" onClick="jQuery.get('http://{{ip}}:8080/groove?action=volume&level=10');" />
-<input type="button" value="Medium" onClick="jQuery.get('http://{{ip}}:8080/groove?action=volume&level=50');" />
-<input type="button" value="High" onClick="jQuery.get('http://{{ip}}:8080/groove?action=volume&level=100');" />
+<input type="button" value="Low" onClick="jQuery.get('/groove?action=volume&level=10');" />
+<input type="button" value="Medium" onClick="jQuery.get('/groove?action=volume&level=50');" />
+<input type="button" value="High" onClick="jQuery.get('/groove?action=volume&level=100');" />
 
 
 <h2>Groove Results</h2>
@@ -31,7 +31,7 @@
     %   SongName=song['SongName']
     %   SongID=song['SongID']
     <tr>
-        <td><input type="button" value="Add" onClick="jQuery.get('http://{{ip}}:8080/groove?action=addSong&songID={{SongID}}');" /></td>
+        <td><input type="button" value="Add" onClick="jQuery.get('/groove?action=addSong&songID={{SongID}}');" /></td>
         <td>{{SongName}}</td><td>{{ArtistName}}</td><td>{{AlbumName}}</td>
     </tr>
     %end
