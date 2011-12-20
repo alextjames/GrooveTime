@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from bottle import redirect, response, route, get, view, request, post, debug, run, template
+from bottle import redirect, response, route, get, view, request, post, debug, run, template, PasteServer
 import urllib2
 import json
 import re
@@ -47,4 +47,4 @@ if len(sys.argv) != 2:
 
 ip=sys.argv[1]
 action_queue = Queue.Queue()
-run(host='0.0.0.0', port=8080)
+run(host='0.0.0.0', port=8080, server=PasteServer)
