@@ -9,16 +9,7 @@
 
 function playSong()
 {
-    var curStatus = window.Grooveshark.getCurrentSongStatus();
-    
-    if(curStatus.status == 'playing')
-    {
-        return;
-    }
-    
     window.Grooveshark.play();
-    
-    setTimeout(playSong, 500);
 }
 
 function pauseSong()
@@ -31,9 +22,18 @@ function nextSong()
     window.Grooveshark.next();
 }
 
-function addSong(data) {
-    window.Grooveshark.addSongsByID([data.songID]);
-    playSong();
+function addSong(data)
+{
+    var startNow = true;
+    var curStatus = window.Grooveshark.getCurrentSongStatus();
+    
+    // If there are already songs playing, we don't want to start this one right away.
+    if(curStatus.status == 'playing')
+    {
+        startNow = false;
+    }
+    
+    window.Grooveshark.addSongsByID([data.songID], startNow);
 }
 
 function doTimer() {
