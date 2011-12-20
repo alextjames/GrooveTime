@@ -13,6 +13,12 @@
 <input type="button" value="Play" onClick="jQuery.get('http://{{ip}}:8080/groove?action=play');" />
 <input type="button" value="Pause" onClick="jQuery.get('http://{{ip}}:8080/groove?action=pause');" />
 <input type="button" value="Next" onClick="jQuery.get('http://{{ip}}:8080/groove?action=next');" />
+<br>
+<h3>Volume</h3>
+<input type="button" value="Low" onClick="jQuery.get('http://{{ip}}:8080/groove?action=volume&level=10');" />
+<input type="button" value="Medium" onClick="jQuery.get('http://{{ip}}:8080/groove?action=volume&level=50');" />
+<input type="button" value="High" onClick="jQuery.get('http://{{ip}}:8080/groove?action=volume&level=100');" />
+
 
 <h2>Groove Results</h2>
 <p>

@@ -22,6 +22,11 @@ function nextSong()
     window.Grooveshark.next();
 }
 
+function setVolume(level)
+{
+    window.Grooveshark.setVolume(level);
+}
+
 function addSong(data)
 {
     var startNow = true;
@@ -56,6 +61,9 @@ function doTimer() {
                     break;
                 case "next":
                     nextSong();
+                    break;
+                case "volume":
+                    setVolume(data.level);
                     break;
             }
             
