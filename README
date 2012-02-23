@@ -1,17 +1,16 @@
 GrooveTime allows you to control groove shark from a remote device through a light weight web interface. It's made up of two parts:
 
-    - The python script which is a web server. It needs to be invoked with the first argument being a hostname or ip which can be reached by any computer you'd like to remotely control grooveshark with.
-    - The second part is a greasemonkey(firefox) or tampermonkey(chrome) which is meant to run on the brower with groove shark open. This must be the same computer running the python script.
+    - A python webserver which hosts the UI and will dispatch events to the...
+    - Google Chrome plugin
 
 *****
 * Requirements
 *****
 
     - You must have the python libraries bottle installed.
-    - The brower running groove shark needs greasemonkey or tampermonkey installed, and the included user script enabled.
 
 *****
 * Instructions
 *****
     
-GrooveTime is simply to use, just run the included python script. On the same computer run groove shark in a browser with the included plugin installed. Connect to the server on port 8080 on your remote device and let the good times roll.
+GrooveTime is simple to use, just run the included python script. On the same computer run groove shark in a browser with the included plugin installed. Connect to the server on port 8080 on your remote device and let the good times roll.

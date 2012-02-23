@@ -1,0 +1,20 @@
+{
+    "name": "GrooveTime",
+    "version": "0.2.0",
+   
+    "description": "This pluging will allow you to interface with the groove time webserver, and allow you to control your grooveshark form any application on your network",
+
+    "content_scripts": [
+        {
+            "matches": ["http://grooveshark.com/"],
+            "js": ["grooveTime.js"],
+            "run_at": "document_idle"
+        }
+    ],
+
+    "permissions": [
+        "tabs", 
+        "http://localhost/*"
+    ]
+}
+

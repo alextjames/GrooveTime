@@ -31,15 +31,12 @@ def groove_post():
 
 @route('/groove_list.json')
 def groove_list():
-    callback = request.query.callback
-    response.content_type = 'text/javascript'
-    
     try:
         action = action_queue.get(False)
     except Queue.Empty:
         return
 
-    return callback + '(' + json.dumps(action) + ')'
+    return json.dumps(action)
 
 action_queue = Queue.Queue()
 run(host='0.0.0.0', port=8080, server=PasteServer)
